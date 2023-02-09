@@ -3,7 +3,7 @@
 rm -r proto
 rm -r proto-thirdparty
 cp -r ./chain/proto ./
-cp -r ./chain/proto-thirdparty ./
+cp -r ./chain/third_party/proto ./
 
 proto_dirs=$(find ./proto -path -prune -o -name '*.proto' -print0 | xargs -0 -n1 dirname | sort | uniq)
 proto_files=()
@@ -20,7 +20,7 @@ npx pbjs \
   --no-create \
   --path=./proto/ \
   --path=./proto-thirdparty/ \
-  --root=ununifi-client \
+  --root=crescent-client \
   ${proto_files[@]}
 
 npx pbjs \
@@ -33,7 +33,7 @@ npx pbjs \
   --no-create \
   --path=./proto/ \
   --path=./proto-thirdparty/ \
-  --root=ununifi-client \
+  --root=crescent-client \
   ${proto_files[@]}
 
 npx pbts \
