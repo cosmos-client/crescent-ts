@@ -1,7 +1,7 @@
 {
-  "name": "ununifi-client",
+  "name": "@cosmos-client/crescent",
   "version": "0.46.2-rc1",
-  "description": "REST API Client for UnUniFi Blockchain",
+  "description": "REST API Client for Crescent Blockchain",
   "main": "./cjs/index.js",
   "module": "./esm/index.js",
   "exports": {
@@ -24,8 +24,8 @@
     "build:cjs": "tsc --build --clean && tsc --target es5 --module commonjs && mv lib dist/cjs",
     "build:esm": "tsc --build --clean && tsc --target esnext --module esnext && mv lib dist/esm",
     "build:cdn": "tsc --build --clean && tsc --target esnext --module esnext && webpack && cp cdn/main.js dist/index.min.js",
-    "gen:openapi": "bash ./gen-openapi.sh && npm run lint:fix",
-    "gen:proto": "bash ./gen-proto.sh && npm run lint:fix"
+    "gen:openapi": "bash ./gen-openapi.sh",
+    "gen:proto": "bash ./gen-proto.sh"
   },
   "author": "",
   "license": "ISC",
